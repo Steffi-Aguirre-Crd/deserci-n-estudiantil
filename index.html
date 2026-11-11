@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Por qué los estudiantes dejan la carrera?</title>
+<meta name="description" content="Deserción estudiantil en una institución de educación superior: cuándo ocurre, qué la explica y cómo anticiparla. Semana de la Ingeniería.">
+<meta property="og:title" content="¿Por qué los estudiantes dejan la carrera, y cómo verlo venir a tiempo?">
+<meta property="og:description" content="61.647 estudiantes, 2018 a 2023. La deserción ocurre al comienzo y las notas la anticipan.">
+<meta name="theme-color" content="#002060">
+<style>
+:root{--navy:#002060;--ink:#0B1A4A;--mid:#1F6FD8;--cyan:#00B0F0;--light:#7FA8D8;--bg:#F3F6FB;--card:#FFFFFF;--muted:#5F6B7A;--line:#D9E1EE;--ok:#0F7A3A;--bad:#B3261E;--warn:#9A5B00;--grey:#B8C2D1;--r:12px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:16px;display:flex;flex-direction:column;gap:36px}
+h1,h2,.big{font-family:"Arial Black",Arial,Helvetica,sans-serif;font-weight:900}
+h1{font-size:clamp(1.7rem,6.5vw,2.8rem);line-height:1.08;margin:0}
+h2{font-size:clamp(1.3rem,4.8vw,1.8rem);line-height:1.15;margin:0}
+h3{font-size:1.05rem;margin:0}
+p{margin:0}
+.muted{color:var(--muted)}
+.cap{font-size:.82rem;color:var(--muted)}
+/* Portada */
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff;border-radius:18px;padding:clamp(22px,6vw,44px);display:flex;flex-direction:column;gap:14px}
+.hero>*{position:relative;z-index:1}
+.hero::after,.hero::before{content:"";position:absolute;border-radius:50%;z-index:0}
+.hero::after{width:200px;height:200px;right:-70px;top:-70px;background:var(--cyan);opacity:.9}
+.hero::before{width:170px;height:170px;left:-60px;bottom:-95px;background:var(--mid);opacity:.55}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.rule{display:block;width:min(100%,30rem);height:3px;border-radius:2px;background:var(--cyan)}
+.lead{font-size:1.06rem;max-width:62ch}
+.lead b{color:var(--cyan)}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0;padding:0;list-style:none;font-size:.82rem}
+.nav a{display:inline-block;padding:5px 11px;border:1px solid rgba(255,255,255,.4);border-radius:999px;color:#fff;text-decoration:none}
+/* Tarjetas y cifras */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:12px}
+.tile,.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:6px;box-shadow:0 1px 2px rgba(11,26,74,.06);min-width:0}
+.card{gap:14px}
+.tile .k{font-size:.8rem;color:var(--muted)}
+.big{font-size:clamp(1.9rem,8vw,2.5rem);line-height:1.05;color:var(--navy)}
+.bad .big{color:var(--bad)}.ok .big{color:var(--ok)}
+.sec{display:flex;flex-direction:column;gap:16px;scroll-margin-top:12px}
+.head{display:flex;flex-direction:column;gap:8px;max-width:66ch}
+.pill{align-self:flex-start;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;padding:3px 12px;border:1.5px solid var(--cyan);border-radius:999px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:14px;align-items:start}
+.band{background:var(--navy);color:#fff;border-radius:18px;padding:clamp(16px,4.5vw,32px)}
+.band .card,.band .tile{color:var(--ink)}
+.band .head p{opacity:.92}
+/* Estado final */
+.stack{display:flex;height:22px;border-radius:999px;overflow:hidden;gap:2px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;color:var(--muted);margin:0;padding:0;list-style:none}
+.legend li{display:flex;align-items:center;gap:6px}
+.legend b{color:var(--ink)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px}
+/* Columnas verticales */
+.cols{display:flex;align-items:flex-end;gap:6px;height:210px;padding-top:22px;border-bottom:1px solid var(--line)}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;min-width:0}
+.col i{display:block;width:100%;border-radius:4px 4px 0 0}
+.col span{font-size:.72rem;font-weight:700;margin-bottom:3px;white-space:nowrap}
+.xl{display:flex;gap:6px}.xl span{flex:1;text-align:center;font-size:.75rem;color:var(--muted);min-width:0}
+.pair{display:flex;gap:2px;width:100%;align-items:flex-end;height:100%}
+.pair .col{height:100%}
+/* Barras horizontales */
+.bars{display:flex;flex-direction:column;gap:9px}
+.row{display:grid;grid-template-columns:minmax(6.5rem,40%) minmax(0,1fr);gap:8px;align-items:center;font-size:.9rem}
+.row.ref{border-top:1px dashed var(--line);padding-top:9px;font-weight:700}
+.track{display:flex;align-items:center;gap:6px;min-width:0}
+.bar{height:15px;border-radius:3px;min-width:2px}
+.val{font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+.seg{display:flex;height:22px;border-radius:3px;overflow:hidden;gap:1px}
+.seg span{display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;white-space:nowrap;overflow:hidden}
+/* Riesgo relativo */
+.hr{display:grid;grid-template-columns:minmax(6.5rem,38%) minmax(0,1fr) 3.3rem;gap:8px;align-items:center;font-size:.9rem}
+.hrt{position:relative;height:22px}
+.hrt .z{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--muted)}
+.hrt .b{position:absolute;top:5px;height:12px;border-radius:2px}
+.hrt .ci{position:absolute;top:10px;height:2px;background:var(--ink);opacity:.55}
+.hrv{font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
+/* Otros */
+.callout{border-left:4px solid var(--line);padding-left:12px;display:flex;flex-direction:column;gap:2px}
+.callout .big{font-size:clamp(1.6rem,6vw,2rem)}
+.callout.bad{border-color:var(--bad)}.callout.ok{border-color:var(--ok)}.callout.warn{border-color:var(--warn)}
+.surv{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+.surv div{border-top:1px solid var(--line);padding-top:6px;display:flex;flex-direction:column}
+.surv b{font-family:"Arial Black",Arial,sans-serif;font-size:1.35rem;color:var(--navy)}
+.surv span{font-size:.72rem;color:var(--muted)}
+.steps3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px}
+.steps3 li{border-top:4px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:2px}
+.steps3 li.key{border-color:var(--ok)}
+.steps3 .big{font-size:1.9rem}
+.box{background:var(--bg);color:var(--ink);border:1px dashed var(--grey);border-radius:var(--r);padding:12px 14px}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px;margin:0;padding:0;list-style:none}
+.acts li{border-top:3px solid var(--cyan);padding-top:8px;display:flex;flex-direction:column;gap:3px}
+.acts span{color:var(--muted);font-size:.92rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:10px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px;display:flex;flex-direction:column;gap:4px}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--navy);color:#fff;font-family:"Arial Black",Arial,sans-serif;font-size:.9rem}
+.steps span{font-size:.82rem;color:var(--muted)}
+details{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 16px}
+summary{cursor:pointer;font-weight:700}
+dl{display:grid;gap:8px;margin:10px 0 0}dt{font-weight:700}dd{margin:0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding-top:16px;font-size:.82rem;color:var(--muted);text-align:center}
+svg text{font-family:Arial,sans-serif;font-size:11px;fill:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero" id="inicio">
+  <p class="eyebrow">Semana de la Ingeniería · Institución de educación superior · Datos 2018-1 a 2023-2</p>
+  <h1>¿Por qué los estudiantes dejan la carrera, y cómo verlo venir a tiempo?</h1>
+  <span class="rule"></span>
+  <p class="lead">Seguimos a <b>61.647</b> estudiantes de pregrado presencial semestre a semestre. El <b>43,0 %</b> desertó, casi siempre al comienzo de la carrera. Las notas lo anticipan mucho mejor que el perfil del estudiante: revisando al 20 % con más riesgo se encuentra al <b>52 %</b> de quienes se van.</p>
+  <ul class="nav">
+    <li><a href="#cuando">¿Cuándo?</a></li><li><a href="#explica">¿Qué la explica?</a></li><li><a href="#quien">¿Quién?</a></li>
+    <li><a href="#donde">¿Dónde?</a></li><li><a href="#momento">Pandemia</a></li><li><a href="#anticipar">¿Se puede anticipar?</a></li><li><a href="#hacer">Qué hacer</a></li>
+  </ul>
+</header>
+
+<section class="tiles" aria-label="Cifras principales">
+  <div class="tile"><p class="k">Estudiantes observados</p><span class="big">61.647</span><p>1.228.132 materias inscritas analizadas</p></div>
+  <div class="tile bad"><p class="k">Desertaron</p><span class="big">43,0 %</span><p>26.533 estudiantes</p></div>
+  <div class="tile bad"><p class="k">Se van en el primer semestre</p><span class="big">26,3 %</span><p>de los estudiantes nuevos</p></div>
+  <div class="tile ok"><p class="k">Se pueden detectar a tiempo</p><span class="big">52 %</span><p>de los desertores, revisando solo al 20 % con más riesgo</p></div>
+</section>
+
+<section class="card">
+  <h3>¿Cómo terminaron los estudiantes observados?</h3>
+  <div class="stack" id="estado" role="img" aria-label="43 % desertores, 40,5 % pendientes y 16,5 % egresados"></div>
+  <ul class="legend" id="estado-leg"></ul>
+  <p class="cap">Desertor: dos o más semestres seguidos sin matricularse y sin haberse graduado (criterio SPADIES). Pendiente: seguía en 2023 y su desenlace aún no se observa. Egresado: se deduce de matrículas y notas, no es una titulación confirmada.</p>
+</section>
+
+<section class="sec" id="cuando">
+  <div class="head"><p class="pill">Pregunta 1 · ¿Cuándo?</p><h2>El riesgo de irse tiene forma de L: es máximo al comenzar</h2>
+  <p>El 26,3 % de los estudiantes nuevos se va al terminar el primer semestre, y 2 de cada 3 deserciones ocurren en los dos primeros. En el semestre 6 el riesgo baja al 6,8 %.</p></div>
+  <div class="card">
+    <h3>% de estudiantes que deserta en cada semestre de su carrera</h3>
+    <div><div class="cols" id="riesgo" role="img" aria-label="Riesgo por semestre: 26 % en el 1, 16 % en el 2, baja hasta 7 % en el 6"></div><div class="xl" id="riesgo-x"></div></div>
+    <p class="cap">Semestre de la carrera. 30.191 estudiantes nuevos. En rojo, los dos semestres más críticos.</p>
+    <p class="cap">¿Cuántos siguen estudiando, sin desertar?</p>
+    <div class="surv" id="surv"></div>
+  </div>
+</section>
+
+<section class="sec" id="explica">
+  <div class="head"><p class="pill">Pregunta 2 · ¿Qué la explica?</p><h2>Las notas pesan mucho más que el perfil del estudiante</h2>
+  <p>Medimos qué tanto separa cada variable a quien deserta de quien sigue, de 0 a 1. El rendimiento tiene efecto grande; sexo, estrato y facultad casi no separan.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Tamaño del efecto de cada variable</h3>
+      <ul class="legend"><li><span class="sw" style="background:var(--navy)"></span>Grande</li><li><span class="sw" style="background:var(--mid)"></span>Mediano</li><li><span class="sw" style="background:var(--cyan)"></span>Pequeño</li><li><span class="sw" style="background:var(--grey)"></span>Casi nulo</li></ul>
+      <div class="bars" id="efectos"></div>
+      <p class="cap">0 = la variable no separa nada; 1 = separa por completo. 219.920 semestres analizados.</p></div>
+    <div class="card"><h3>% que deserta según materias aprobadas en su primer semestre</h3>
+      <div><div class="cols" id="aprobadas" role="img" aria-label="82 % deserta con 0 aprobadas y 2 % con 6"></div><div class="xl" id="aprobadas-x"></div></div>
+      <p class="cap">Materias aprobadas. Cada materia aprobada reduce el riesgo aproximadamente a la mitad.</p>
+      <div class="callout bad"><span class="big">86,3 %</span><p>deserta si cancela todas sus materias del primer semestre.</p></div></div>
+  </div>
+</section>
+
+<section class="sec" id="quien">
+  <div class="head"><p class="pill">Pregunta 3 · ¿Quién está en mayor riesgo?</p><h2>Agrupar por notas separa mucho más que agrupar por perfil</h2>
+  <p>Diferencia entre el mejor y el peor grupo en el % de estudiantes nuevos que sigue matriculado al semestre 6.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Diferencia entre el mejor y el peor grupo (puntos porcentuales)</h3>
+      <ul class="legend"><li><span class="sw" style="background:var(--navy)"></span>Académica</li><li><span class="sw" style="background:var(--mid)"></span>Institucional</li><li><span class="sw" style="background:var(--cyan)"></span>Sociodemográfica</li></ul>
+      <div class="bars" id="brecha"></div></div>
+    <div class="card">
+      <div class="callout bad"><span class="big">8 %</span><p>sigue estudiando al semestre 6 entre quienes menos aprobaron en su primer semestre.</p></div>
+      <div class="callout ok"><span class="big">72 %</span><p>sigue estudiando entre quienes más aprobaron.</p></div>
+      <div class="callout"><span class="big">10 %–17 %</span><p>cambia el riesgo de un programa a otro para estudiantes con el mismo rendimiento.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="donde">
+  <div class="head"><p class="pill">Pregunta 4 · ¿Dónde tropiezan?</p><h2>Las materias filtro están en ciencias básicas</h2>
+  <p>En estas materias, entre la mitad y siete de cada diez inscripciones terminan reprobadas o canceladas. En el promedio de la institución, menos de un tercio.</p></div>
+  <div class="card"><h3>Resultado de las inscripciones por materia</h3>
+    <ul class="legend"><li><span class="sw" style="background:var(--ok)"></span>Aprobó</li><li><span class="sw" style="background:var(--bad)"></span>Reprobó</li><li><span class="sw" style="background:#C77700"></span>Canceló</li></ul>
+    <div class="bars" id="filtro"></div>
+    <p class="cap">1,2 millones de inscripciones, 2018-1 a 2023-2.</p></div>
+</section>
+
+<section class="sec" id="momento">
+  <div class="head"><p class="pill">Pregunta 5 · ¿Influye el momento?</p><h2>La pandemia movió la deserción para todos al mismo tiempo</h2>
+  <p>En 2020-1 la deserción cayó a casi la mitad en todos los semestres de la carrera a la vez; luego rebotó y en 2022 llegó al máximo. Los datos muestran la coincidencia, no prueban la causa.</p></div>
+  <div class="grid">
+    <div class="card"><h3>% que deserta en cada semestre del calendario</h3>
+      <ul class="legend"><li><span class="sw" style="background:var(--navy)"></span>Estudiantes nuevos</li><li><span class="sw" style="background:var(--cyan)"></span>Todos los matriculados</li></ul>
+      <div id="periodo"></div><p class="cap">La franja sombreada marca 2020-1, el primer semestre de la pandemia.</p></div>
+    <div class="card">
+      <div class="callout ok"><span class="big">6,7 %</span><p>en 2020-1, frente a cerca de 12 % a 13 % antes de la pandemia.</p></div>
+      <div class="callout bad"><span class="big">33,2 %</span><p>de quienes ingresaron en 2020-2, la primera cohorte en virtualidad, desertó en su primer semestre.</p></div>
+      <div class="callout warn"><span class="big">14,0 %</span><p>en 2022-2, con el regreso a la presencialidad: el valor más alto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec band" id="anticipar">
+  <div class="head"><p class="pill">Pregunta 6 · ¿Se puede anticipar?</p><h2>Sí: con las notas del semestre anterior se encuentra a la mitad de los desertores</h2>
+  <p>Ajustamos un modelo de supervivencia (Cox) con 2018-2 a 2019-2 y lo probamos en 2021-1 a 2022-2, semestres que nunca vio. Solo usa información que existe antes de que el estudiante decida irse.</p></div>
+  <div class="tiles">
+    <div class="tile ok"><p class="k">Desertores encontrados</p><span class="big">52 %</span><p>revisando solo al 20 % con más riesgo</p></div>
+    <div class="tile"><p class="k">Frente a revisar al azar</p><span class="big">2,6×</span><p>más desertores con el mismo esfuerzo</p></div>
+    <div class="tile"><p class="k">Con una regla sencilla, sin modelo</p><span class="big">50 %</span><p>de los desertores, alertando al 19 % de los estudiantes</p></div>
+  </div>
+  <p class="box"><b>La regla sencilla:</b> alertar a quien en el semestre anterior aprobó menos de la mitad de sus materias o no tuvo ninguna nota. De los alertados, el 29 % deserta.</p>
+  <div class="grid">
+    <div class="card"><h3>% de desertores encontrados según cuántos estudiantes se revisan</h3>
+      <ul class="legend"><li><span class="sw" style="background:var(--navy)"></span>Con el modelo</li><li><span class="sw" style="background:var(--grey)"></span>Al azar</li></ul>
+      <div><div class="cols" id="captura" role="img" aria-label="Revisando al 20 %, el modelo encuentra al 52 % de los desertores frente a 20 % al azar"></div><div class="xl" id="captura-x"></div></div>
+      <p class="cap">Prueba en 2021-1 a 2022-2, estudiantes nuevos desde su segundo semestre.</p></div>
+    <div class="card"><h3>Las notas bastan: el perfil casi no predice</h3>
+      <div class="bars" id="auc"></div>
+      <p class="cap">AUC: al comparar a uno que deserta con uno que sigue, la probabilidad de que el modelo le dé más riesgo al primero. 0,5 = azar; 1 = perfecto.</p></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Primer semestre: la mitad del periodo es la ventana para actuar</h3>
+    <ol class="steps3">
+      <li><b>Día 1 de matrícula</b><span class="big">27 %</span><span class="cap">de los desertores al revisar al 20 % · AUC 0,58, casi al azar</span></li>
+      <li class="key"><b>Mitad del semestre (corte 2)</b><span class="big">60 %</span><span class="cap">de los desertores al revisar al 20 % · AUC 0,89, aún hay tiempo</span></li>
+      <li><b>Cierre del semestre</b><span class="big">58 %</span><span class="cap">de los desertores al revisar al 20 % · AUC 0,92, pero ya es tarde</span></li>
+    </ol>
+    <div class="callout bad"><span class="big">88,6 %</span><p>de los estudiantes nuevos deserta si su promedio al corte 2 es 0,82 o menos (sobre 5).</p></div></div>
+  <div class="card" style="margin-top:14px"><h3>Cómo cambia el riesgo de desertar el semestre siguiente</h3>
+    <ul class="legend"><li><span class="sw" style="background:var(--ok)"></span>Reduce el riesgo</li><li><span class="sw" style="background:var(--bad)"></span>Aumenta el riesgo</li><li><span class="sw" style="background:var(--grey)"></span>Sin efecto claro</li></ul>
+    <div class="bars" id="hr"></div>
+    <p class="cap">Modelo de Cox con información del semestre anterior, todos los factores a la vez. La línea fina es el intervalo de confianza del 95 %. "Aumento típico" = una desviación estándar.</p></div>
+</section>
+
+<section class="sec" id="hacer">
+  <div class="head"><p class="pill">Lo que sugieren los datos</p><h2>Dónde actuar para que más estudiantes terminen</h2></div>
+  <ul class="acts">
+    <li><b>Acompañar el primer semestre</b><span>Es donde se concentra la mayor parte de las deserciones.</span></li>
+    <li><b>Mirar el corte 2</b><span>A mitad del primer semestre ya se distingue quién está en riesgo, y aún hay tiempo.</span></li>
+    <li><b>Usar una alerta sencilla</b><span>Quien aprobó menos de la mitad de sus materias el semestre anterior necesita acompañamiento.</span></li>
+    <li><b>Reforzar ciencias básicas</b><span>Monitorías y nivelación en matemáticas, álgebra, cálculo y física.</span></li>
+    <li><b>Orientar antes de cancelar todo</b><span>Quien cancela todas sus materias casi nunca regresa.</span></li>
+  </ul>
+</section>
+
+<section class="sec" id="metodo">
+  <div class="head"><p class="pill">Cómo lo hicimos</p><h2>De registros académicos a una alerta temprana</h2>
+  <p>Unimos matrícula y notas en una sola historia por estudiante: 272.833 semestres-estudiante.</p></div>
+  <ol class="steps">
+    <li><b>Limpieza e integración</b><span>Notas en una sola escala; una fila por estudiante y semestre.</span></li>
+    <li><b>Asociación</b><span>Qué separa a quien deserta, con tamaño del efecto.</span></li>
+    <li><b>Variables nuevas</b><span>Materias filtro inscritas, cancelaciones ajustadas.</span></li>
+    <li><b>Redundancia y componentes</b><span>Una variable por grupo; las simples funcionan igual o mejor.</span></li>
+    <li><b>Supervivencia</b><span>Tablas de vida: en qué semestre ocurre la deserción.</span></li>
+    <li><b>Modelo de Cox</b><span>El efecto de cada factor, todos a la vez.</span></li>
+    <li><b>Validación</b><span>Prueba en semestres que el modelo nunca vio.</span></li>
+  </ol>
+  <details><summary>Definiciones y alcance</summary><dl>
+    <dt>Deserción</dt><dd>Dos o más semestres consecutivos sin matrícula y sin haberse graduado (SPADIES). El último semestre evaluable es 2022-2.</dd>
+    <dt>Egresado</dt><dd>Se deduce de matrículas y notas; no es una titulación confirmada.</dd>
+    <dt>Tamaño del efecto</dt><dd>Qué tanto se diferencian quienes desertan de quienes siguen, de 0 a 1. Se usa en vez del valor p porque, con tantos datos, casi cualquier diferencia resulta "significativa".</dd>
+    <dt>AUC</dt><dd>La probabilidad de que el modelo le asigne más riesgo a quien deserta que a quien sigue. 0,5 es el azar y 1 es perfecto.</dd>
+    <dt>Alcance</dt><dd>Estudio observacional: muestra qué se asocia con la deserción y qué la anticipa, no prueba causas.</dd>
+  </dl></details>
+</section>
+
+<footer>Proyecto de permanencia estudiantil en una institución de educación superior · Steffi Aguirre e Ignacio Pérez · Datos anonimizados y agregados.</footer>
+</div>
+
+<script>
+const fmt=(v,d=0)=>(v*100).toFixed(d).replace('.',',')+' %';
+const $=(id)=>document.getElementById(id);
+function el(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
+
+// Estado final
+[['Desertor',26533,'var(--bad)'],['Pendiente',24971,'var(--grey)'],['Egresado',10143,'var(--ok)']].forEach(([n,v,c])=>{
+  const p=v/61647; const s=el('span');s.style.width=p*100+'%';s.style.background=c;$('estado').appendChild(s);
+  const li=el('li');const sw=el('span','sw');sw.style.background=c;li.append(sw,el('b',null,fmt(p,1)),document.createTextNode(n+' · '+v.toLocaleString('es-CO')));$('estado-leg').appendChild(li);});
+
+// Columnas verticales
+function cols(id,rows,max,color){
+  const box=$(id),xl=$(id+'-x');
+  rows.forEach(([x,v],i)=>{const c=el('div','col');c.append(el('span',null,fmt(v)));const b=el('i');b.style.height=(v/max*100)+'%';b.style.background=color(i,v);c.appendChild(b);box.appendChild(c);xl.appendChild(el('span',null,x));});}
+const riesgo=[0.2629,0.1564,0.1146,0.0899,0.0710,0.0682,0.0811,0.0825,0.0860,0.0822];
+cols('riesgo',riesgo.map((v,i)=>[String(i+1),v]),0.28,(i)=>i<2?'var(--bad)':'var(--navy)');
+let sigue=1;const s={};riesgo.forEach((h,i)=>{sigue*=1-h;s[i+1]=sigue;});
+[2,4,6,10].forEach(k=>{const d=el('div');d.append(el('b',null,fmt(s[k])),el('span',null,'al semestre '+k));$('surv').appendChild(d);});
+cols('aprobadas',[0.816,0.508,0.263,0.126,0.060,0.026,0.020].map((v,i)=>[String(i),v]),0.85,()=>'var(--navy)');
+
+// Barras horizontales
+function hbars(id,rows,max,f){rows.forEach(r=>{const row=el('div','row'+(r.ref?' ref':''));row.appendChild(el('span',null,r.l));
+  const t=el('div','track');const b=el('span','bar');b.style.width='calc((100% - 3.6em) * '+Math.min(1,r.v/max)+')';b.style.background=r.c;t.append(b,el('span','val',f(r.v)));row.appendChild(t);$(id).appendChild(row);});}
+const mag=(v)=>v>=.5?'var(--navy)':v>=.3?'var(--mid)':v>=.1?'var(--cyan)':'var(--grey)';
+const d2=(v)=>v.toFixed(2).replace('.',',');
+hbars('efectos',[['Materias aprobadas',.761],['Tasa de aprobación',.716],['Promedio del semestre',.709],['Promedio al corte 2',.610],['Promedio acumulado',.601],['Nivel en la carrera',.405],['Sin promedio registrado',.296],['Créditos inscritos',.204],['Programa',.134],['% de clases virtuales',.075],['Sexo',.030],['Facultad',.015],['Estrato',.009]].map(([l,v])=>({l,v,c:mag(v)})),.8,d2);
+const tipo={A:'var(--navy)',I:'var(--mid)',S:'var(--cyan)'};
+hbars('brecha',[['Tasa de aprobación del 1.er semestre',64.0,'A'],['Sin ninguna nota en el 1.er semestre',41.9,'A'],['Programa',19.8,'I'],['Tipo de programa',13.4,'I'],['Facultad',7.4,'I'],['Sexo',6.8,'S'],['Jornada',6.5,'I'],['Estrato',2.7,'S']].map(([l,v,t])=>({l,v,c:tipo[t]})),64,(v)=>v.toFixed(1).replace('.',',')+' pp');
+hbars('auc',[['Solo rendimiento del semestre anterior',.7644,1],['Modelo completo (Cox)',.7585,1],['Regresión logística',.7562,1],['Solo perfil del estudiante',.5527,0],['Sin información individual',.5260,0]].map(([l,v,k])=>({l,v,c:k?'var(--navy)':'var(--grey)'})),1,d2);
+
+// Materias filtro
+[['Geometría vectorial y analítica',.305,.295,.400],['Matemáticas básicas',.367,.311,.322],['Álgebra lineal',.387,.238,.375],['Cálculo diferencial',.399,.238,.363],['Física mecánica',.437,.270,.293],['Ecuaciones diferenciales',.468,.188,.344],['Estadística básica',.485,.214,.301],['Cálculo integral',.512,.179,.309],['Promedio institucional',.687,.143,.170]].forEach(([m,a,r,c])=>{
+  const row=el('div','row'+(m==='Promedio institucional'?' ref':''));row.appendChild(el('span',null,m));const st=el('div','seg');
+  [[a,'var(--ok)'],[r,'var(--bad)'],[c,'#C77700']].forEach(([v,col])=>{const sp=el('span',null,v>=.14?fmt(v):'');sp.style.width=v*100+'%';sp.style.background=col;st.appendChild(sp);});
+  row.appendChild(st);$('filtro').appendChild(row);});
+
+// Captura: barras agrupadas
+(function(){const box=$('captura'),xl=$('captura-x');[[.05,.176],[.10,.334],[.20,.520],[.30,.643],[.50,.812]].forEach(([r,m])=>{
+  const g=el('div','col');const p=el('div','pair');[[m,'var(--navy)'],[r,'var(--grey)']].forEach(([v,c])=>{const c2=el('div','col');c2.append(el('span',null,fmt(v)));const b=el('i');b.style.height=v*100+'%';b.style.background=c;c2.appendChild(b);p.appendChild(c2);});
+  g.appendChild(p);box.appendChild(g);xl.appendChild(el('span',null,'Revisa '+fmt(r)));});})();
+
+// Riesgo relativo (hazard ratios del modelo L)
+(function(){const rows=[['Tasa de aprobación',.6210,.5960,.6471],['Nivel en la carrera',.7860,.7485,.8255],['Promedio del semestre',.8481,.8245,.8725],['Créditos inscritos',.9057,.8827,.9292],['Materias canceladas',1.0651,1.0381,1.0927],['Jornada nocturna al ingresar',1.1208,1.0712,1.1726],['Sexo masculino',1.0272,.9866,1.0695],['Estrato',1.0148,.9948,1.0352]].map(([f,h,l,u])=>({f,v:h-1,lo:l-1,hi:u-1}));
+  const lo=-.45,hi=.22,pos=(v)=>(v-lo)/(hi-lo)*100;const sp=(v)=>(v>0?'+':v<0?'−':'')+Math.abs(v*100).toFixed(0)+' %';
+  rows.forEach(r=>{const claro=r.lo>0||r.hi<0;const c=!claro?'var(--grey)':r.v<0?'var(--ok)':'var(--bad)';const row=el('div','hr');row.appendChild(el('span',null,r.f));
+    const t=el('div','hrt');const z=el('span','z');z.style.left=pos(0)+'%';const b=el('span','b');b.style.left=Math.min(pos(0),pos(r.v))+'%';b.style.width=Math.max(.6,Math.abs(pos(r.v)-pos(0)))+'%';b.style.background=c;
+    const ci=el('span','ci');ci.style.left=pos(r.lo)+'%';ci.style.width=(pos(r.hi)-pos(r.lo))+'%';t.append(z,b,ci);row.append(t,el('span','hrv',sp(r.v)));$('hr').appendChild(row);});})();
+
+// Pandemia: líneas en SVG
+(function(){const P=['2018-1','2018-2','2019-1','2019-2','2020-1','2020-2','2021-1','2021-2','2022-1','2022-2'];
+  const N=[.2348,.2148,.2026,.1705,.0903,.1321,.1463,.1248,.1488,.1536],T=[.1282,.1261,.1269,.1163,.0668,.0957,.1147,.1077,.1357,.1396];
+  const W=600,H=250,ml=40,mr=12,mt=12,mb=40,x=(i)=>ml+i*(W-ml-mr)/(P.length-1),y=(v)=>mt+(1-v/.25)*(H-mt-mb);
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Deserción por semestre calendario con caída en 2020-1">`;
+  const st=(W-ml-mr)/(P.length-1);s+=`<rect x="${x(4)-st/2}" y="${mt}" width="${st}" height="${H-mt-mb}" fill="#7FA8D8" opacity=".22"/>`;
+  [0,.05,.1,.15,.2,.25].forEach(v=>{s+=`<line x1="${ml}" x2="${W-mr}" y1="${y(v)}" y2="${y(v)}" stroke="#D9E1EE"/><text x="${ml-6}" y="${y(v)+4}" text-anchor="end">${v*100} %</text>`;});
+  P.forEach((p,i)=>{if(i%2===0)s+=`<text x="${x(i)}" y="${H-mb+18}" text-anchor="middle">${p}</text>`;});
+  [[N,'#002060'],[T,'#00B0F0']].forEach(([d,c])=>{s+=`<polyline fill="none" stroke="${c}" stroke-width="3" stroke-linejoin="round" points="${d.map((v,i)=>x(i)+','+y(v)).join(' ')}"/>`;d.forEach((v,i)=>{s+=`<circle cx="${x(i)}" cy="${y(v)}" r="4" fill="${c}" stroke="#fff" stroke-width="1.5"/>`;});});
+  $('periodo').innerHTML=s+'</svg>';})();
+</script>
+</body>
+</html>
